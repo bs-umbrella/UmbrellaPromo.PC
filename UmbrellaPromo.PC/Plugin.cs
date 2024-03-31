@@ -1,13 +1,6 @@
 ﻿using IPA;
-using IPA.Config;
-using IPA.Config.Stores;
 using SiraUtil.Zenject;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+using UmbrellaPromo.PC.Installers;
 using IPALogger = IPA.Logging.Logger;
 
 namespace UmbrellaPromo.PC
@@ -16,11 +9,15 @@ namespace UmbrellaPromo.PC
     [NoEnableDisable]
     public class Plugin
     {
+        internal static IPALogger Logger { get; private set; }
+
         [Init]
         public void Init(IPALogger logger, IPA.Config.Config conf, Zenjector zenjector)
         {
+            Logger = logger;
             zenjector.UseLogger(logger);
             zenjector.UseHttpService();
+            zenjector.Install<MenuInstaller>(Location.Menu);
         }
     }
 }

@@ -45,6 +45,12 @@
       <HintPath>$(BeatSaberDir)\Plugins\BSML.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DataModels">
+      <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\DataModels.dll</HintPath>
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <Publicize>True</Publicize>
+    </Reference>
     <Reference Include="SiraUtil, Version=3.1.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(BeatSaberDir)\Plugins\SiraUtil.dll</HintPath>
@@ -59,14 +65,17 @@
     <Reference Include="Main">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\Main.dll</HintPath>
       <Private>False</Private>
+      <Publicize>True</Publicize>
     </Reference>
     <Reference Include="HMLib">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\HMLib.dll</HintPath>
       <Private>False</Private>
+      <Publicize>True</Publicize>
     </Reference>
     <Reference Include="HMUI">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\HMUI.dll</HintPath>
       <Private>False</Private>
+      <Publicize>True</Publicize>
     </Reference>
     <Reference Include="IPA.Loader">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\IPA.Loader.dll</HintPath>
@@ -75,18 +84,22 @@
     <Reference Include="Unity.TextMeshPro">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\Unity.TextMeshPro.dll</HintPath>
       <Private>False</Private>
+      <Publicize>True</Publicize>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
+      <Publicize>True</Publicize>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
+      <Publicize>True</Publicize>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
+      <Publicize>True</Publicize>
     </Reference>
     <Reference Include="UnityEngine.UIElementsModule">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
@@ -95,6 +108,7 @@
     <Reference Include="UnityEngine.UIModule">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\UnityEngine.UIModule.dll</HintPath>
       <Private>False</Private>
+      <Publicize>True</Publicize>
     </Reference>
     <Reference Include="UnityEngine.VRModule">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\UnityEngine.VRModule.dll</HintPath>
@@ -112,8 +126,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AffinityPatches\DlcPromoPanelModelPatch.cs" />
+    <Compile Include="AffinityPatches\MusicPackPromoBannerSetupPatch.cs" />
+    <Compile Include="Installers\MenuInstaller.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Configuration\PluginConfig.cs" />
+    <Compile Include="Promo\Promo.cs" />
+    <Compile Include="Promo\PromoRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +148,18 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild">
+      <Version>0.4.1</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Customs-Banner-Notepad.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
