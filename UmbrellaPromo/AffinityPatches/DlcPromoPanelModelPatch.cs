@@ -56,7 +56,8 @@ namespace UmbrellaPromo.AffinityPatches
             UmbrellaPromo.Promo.Promo promo = null;
             foreach (Promo.Promo toFilterPromo in filteredPromos)
             {
-                _log.Info($"Promo: {toFilterPromo.promoInfo.id} Weight: {toFilterPromo.weight}");
+                //_log.Info($"Promo: {toFilterPromo.promoInfo.id} Weight: {toFilterPromo.weight}");
+                // log spam ^
                 totalWeight -= toFilterPromo.weight;
                 if (totalWeight <= goalWeight)
                 {

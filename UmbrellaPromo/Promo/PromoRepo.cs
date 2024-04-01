@@ -75,7 +75,7 @@ namespace UmbrellaPromo.Promo
 
             foreach (DlcPromoPanelModel.PromoInfo DLCPromoInfo in promoModel._promoInfos)
             {
-                Plugin.Logger.Info($"Registering Promo: {DLCPromoInfo}");
+                _log.Info($"Registering Promo: {DLCPromoInfo}");
                 Promo promo = new Promo();
                 string id = DLCPromoInfo.id;
                 promo.promoId = id;
