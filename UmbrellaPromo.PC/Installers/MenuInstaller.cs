@@ -1,8 +1,8 @@
-﻿using UmbrellaPromo.PC.AffinityPatches;
-using UmbrellaPromo.PC.Promo;
+﻿using UmbrellaPromo.AffinityPatches;
+using UmbrellaPromo.Promo;
 using Zenject;
 
-namespace UmbrellaPromo.PC.Installers
+namespace UmbrellaPromo.Installers
 {
     internal class MenuInstaller : Installer
     {

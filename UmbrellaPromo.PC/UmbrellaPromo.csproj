@@ -8,8 +8,8 @@
     <ProjectGuid>{47DF1782-B75F-4429-B62C-E3CE4997487E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UmbrellaPromo.PC</RootNamespace>
-    <AssemblyName>UmbrellaPromo.PC</AssemblyName>
+    <RootNamespace>UmbrellaPromo</RootNamespace>
+    <AssemblyName>UmbrellaPromo</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <DebugSymbols>true</DebugSymbols>
@@ -141,7 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Directory.Build.props" Condition="Exists('Directory.Build.props')" />
-    <None Include="UmbrellaPromo.PC.csproj.user" Condition="Exists('UmbrellaPromo.PC.csproj.user')" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BeatSaberModdingTools.Tasks">

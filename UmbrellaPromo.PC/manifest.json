@@ -1,7 +1,7 @@
 ﻿{
   "$schema": "https://raw.githubusercontent.com/bsmg/BSIPA-MetadataFileSchema/master/Schema.json",
-  "id": "UmbrellaPromo.PC",
-  "name": "UmbrellaPromo.PC",
+  "id": "UmbrellaPromo",
+  "name": "UmbrellaPromo",
   "author": "Speecil",
   "version": "0.0.1",
   "description": "",

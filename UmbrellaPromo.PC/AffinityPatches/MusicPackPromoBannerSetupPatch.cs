@@ -2,7 +2,7 @@
 using SiraUtil.Logging;
 using Zenject;
 
-namespace UmbrellaPromo.PC.AffinityPatches
+namespace UmbrellaPromo.AffinityPatches
 {
     internal class MusicPackPromoBannerSetupPatch : IAffinity
     {

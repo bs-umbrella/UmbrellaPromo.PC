@@ -3,6 +3,6 @@
   <PropertyGroup>
     <ReferencePath>C:\Users\Riley\Documents\BSManager\BSInstances\1.35.0\Beat Saber_Data\Managed;C:\Users\Riley\Documents\BSManager\BSInstances\1.35.0\Libs;C:\Users\Riley\Documents\BSManager\BSInstances\1.35.0\Plugins</ReferencePath>
     <BeatSaberDir>C:\Users\Riley\Documents\BSManager\BSInstances\1.35.0</BeatSaberDir>
-    <ProjectView>ProjectFiles</ProjectView>
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
 </Project>

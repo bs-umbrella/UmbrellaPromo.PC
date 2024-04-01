@@ -1,4 +1,4 @@
-﻿namespace UmbrellaPromo.PC.Promo
+﻿namespace UmbrellaPromo.Promo
 {
     public enum PromoType
     {

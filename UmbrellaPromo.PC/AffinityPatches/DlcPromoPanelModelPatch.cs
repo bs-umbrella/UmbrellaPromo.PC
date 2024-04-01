@@ -3,11 +3,11 @@ using SiraUtil.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UmbrellaPromo.PC.Promo;
+using UmbrellaPromo.Promo;
 using Zenject;
 using static DlcPromoPanelModel;
 
-namespace UmbrellaPromo.PC.AffinityPatches
+namespace UmbrellaPromo.AffinityPatches
 {
     internal class DlcPromoPanelModelPatch : IAffinity
     {
@@ -53,7 +53,7 @@ namespace UmbrellaPromo.PC.AffinityPatches
             Random rd = new Random();
             int goalWeight = rd.Next(0, totalWeight);
 
-            UmbrellaPromo.PC.Promo.Promo promo = null;
+            UmbrellaPromo.Promo.Promo promo = null;
             foreach (Promo.Promo toFilterPromo in filteredPromos)
             {
                 _log.Info($"Promo: {toFilterPromo.promoInfo.id} Weight: {toFilterPromo.weight}");

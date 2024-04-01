@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
-namespace UmbrellaPromo.PC.Promo
+namespace UmbrellaPromo.Promo
 {
     internal class PromoRepo
     {
@@ -67,7 +67,7 @@ namespace UmbrellaPromo.PC.Promo
             PromoInfoSO promoInfoSO = (PromoInfoSO)ScriptableObject.CreateInstance(nameof(PromoInfoSO));
             promoInfoSO._bannerPromoTextPosition = 37.0f;
             promoInfoSO._bannerPromoText = "<color=#bdacd1><size=150%>Custom Levels";
-            promoInfoSO._bannerImage = BeatSaberMarkupLanguage.Utilities.LoadSpriteFromAssemblyAsync("UmbrellaPromo.PC.Images.Customs-Banner-Notepad.png").Result;
+            promoInfoSO._bannerImage = BeatSaberMarkupLanguage.Utilities.FindSpriteInAssembly("UmbrellaPromo.Images.Customs-Banner-Notepad.png");
 
             DlcPromoPanelModel.PromoInfo promoInfo = new DlcPromoPanelModel.PromoInfo("custom_levelpack_CustomLevels", promoInfoSO, PlayerSensitivityFlag.Safe);
             Promo customLevelsRepo = new Promo("custom_levels", PromoType.CustomLevels, true, 15, promoInfo);

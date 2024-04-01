@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using IPA.Config.Stores;
 
 [assembly: InternalsVisibleTo(GeneratedStore.AssemblyVisibilityTarget)]
-namespace UmbrellaPromo.PC.Configuration
+namespace UmbrellaPromo.Configuration
 {
     internal class PluginConfig
     {

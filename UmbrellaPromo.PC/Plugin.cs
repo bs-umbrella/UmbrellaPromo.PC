@@ -1,9 +1,9 @@
 ﻿using IPA;
 using SiraUtil.Zenject;
-using UmbrellaPromo.PC.Installers;
+using UmbrellaPromo.Installers;
 using IPALogger = IPA.Logging.Logger;
 
-namespace UmbrellaPromo.PC
+namespace UmbrellaPromo
 {
     [Plugin(RuntimeOptions.SingleStartInit)]
     [NoEnableDisable]
