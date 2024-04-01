@@ -40,6 +40,7 @@
     <DisableZipRelease>True</DisableZipRelease>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BGLib.UnityExtension, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="BSML, Version=1.9.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(BeatSaberDir)\Plugins\BSML.dll</HintPath>

@@ -4,6 +4,7 @@ using SiraUtil.Web;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using UnityEngine;
 using Zenject;
 
 namespace UmbrellaPromo.PC.Promo
@@ -63,12 +64,10 @@ namespace UmbrellaPromo.PC.Promo
         {
             _log.Info("Registering Promos...");
 
-            PromoInfoSO promoInfoSO = new PromoInfoSO
-            {
-                _bannerPromoTextPosition = 37.0f,
-                _bannerPromoText = "<color=#bdacd1><size=150%>Custom Levels",
-                _bannerImage = BeatSaberMarkupLanguage.Utilities.LoadSpriteFromAssemblyAsync("UmbrellaPromo.PC.Images.Customs-Banner-Notepad.png").Result
-            };
+            PromoInfoSO promoInfoSO = (PromoInfoSO)ScriptableObject.CreateInstance(nameof(PromoInfoSO));
+            promoInfoSO._bannerPromoTextPosition = 37.0f;
+            promoInfoSO._bannerPromoText = "<color=#bdacd1><size=150%>Custom Levels";
+            promoInfoSO._bannerImage = BeatSaberMarkupLanguage.Utilities.LoadSpriteFromAssemblyAsync("UmbrellaPromo.PC.Images.Customs-Banner-Notepad.png").Result;
 
             DlcPromoPanelModel.PromoInfo promoInfo = new DlcPromoPanelModel.PromoInfo("custom_levelpack_CustomLevels", promoInfoSO, PlayerSensitivityFlag.Safe);
             Promo customLevelsRepo = new Promo("custom_levels", PromoType.CustomLevels, true, 15, promoInfo);

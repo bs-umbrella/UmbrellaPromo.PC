@@ -16,7 +16,7 @@ namespace UmbrellaPromo.PC.AffinityPatches
 
         [AffinityPatch(typeof(DlcPromoPanelModel), nameof(DlcPromoPanelModel.GetPackDataForMainMenuPromoBanner))]
         [AffinityPrefix]
-        private PromoInfo GetPackDataForMainMenuPromoBannerPrefix(DlcPromoPanelModel __instance, out bool owned)
+        private bool GetPackDataForMainMenuPromoBannerPrefix(DlcPromoPanelModel __instance, out bool owned, ref PromoInfo __result)
         {
             if (!PromoRepo.hasRegistered)
             {
@@ -45,7 +45,7 @@ namespace UmbrellaPromo.PC.AffinityPatches
             {
                 _log.Info("No promos found, returning null");
                 owned = false; // idfk
-                return null;
+                __result = null;
             }
 
             int totalWeight = filteredPromos.Sum(promotion2 => promotion2.weight);
@@ -69,12 +69,14 @@ namespace UmbrellaPromo.PC.AffinityPatches
             {
                 _log.Info("Selected Promo is null, returning null");
                 owned = false; // idfk
-                return __instance._defaultPromoInfo;
+                __result = __instance._defaultPromoInfo;
             }
 
             _log.Info($"Selected Promo: {promo.promoInfo.id}");
             owned = true; // idfk
-            return promo.promoInfo;
+            __result = promo.promoInfo;
+
+            return false;
         }
     }
 }
