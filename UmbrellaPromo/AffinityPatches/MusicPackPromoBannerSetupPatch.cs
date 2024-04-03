@@ -1,4 +1,5 @@
-﻿using SiraUtil.Affinity;
+﻿using JetBrains.Annotations;
+using SiraUtil.Affinity;
 using SiraUtil.Logging;
 using Zenject;
 
@@ -25,6 +26,12 @@ namespace UmbrellaPromo.AffinityPatches
         {
             _log.Info("Finished setting up Promo [MusicPackPromoBanner.Setup]");
             __instance._promoText.richText = true;
+            __instance.gameObject.SetActive(true);
         }
+
+        [AffinityPatch(typeof(MainMenuViewController), "DidActivate")]
+        [AffinityPostfix]
+        [AffinityAfter(new string[] { "com.BeatSaber.AdBlocker" })]
+        internal void Postfix(ref MusicPackPromoBanner ____musicPackPromoBanner) => ____musicPackPromoBanner.gameObject.SetActive(true);
     }
 }
